@@ -6,5 +6,6 @@
 
   roles:
     - {role: create_user, tags: ['user']}
-    - {role: git, tags: ['git']}
+    - {role: git_install, tags: ['git']}
+    - {role: python, tags: ['python']}
     - {role: galaxy, tags: ['galaxy']}

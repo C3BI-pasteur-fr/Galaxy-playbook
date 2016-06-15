@@ -1,0 +1,25 @@
+---
+- name: Creates directory
+  become: yes
+  become_user: galaxypa
+  file: path=~/src state=directory
+#- name: Python Download
+#  become: yes
+#  become_user: galaxypa
+#  get_url: url=https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz dest=~/src/
+- name: Python Download and Unarchive
+#  become: yes
+#  become_user: galaxypa
+  unarchive: src=https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz dest=/home/galaxypa/src/ creates=/home/galaxypa/src/Python-2.7.11 copy=no
+- name: Python configure
+  become: yes
+  become_user: galaxypa
+  command: ./configure --prefix=~/galaxy-python chdir=~/src/Python-2.7.11 creates=Makefile
+- name: Python make
+  become: yes
+  become_user: galaxypa
+  command: make chdir=~/src/Python-2.7.11
+- name: Python Install
+  become: yes
+  become_user: galaxypa
+  command: make install chdir=~/src/Python-2.7.11
