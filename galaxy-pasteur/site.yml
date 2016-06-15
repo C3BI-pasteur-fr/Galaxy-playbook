@@ -1,0 +1,10 @@
+---
+- name: Install Galaxy Pasteur
+  hosts: ifb
+  remote_user: root
+
+
+  roles:
+    - {role: create_user, tags: ['user']}
+    - {role: git, tags: ['git']}
+    - {role: galaxy, tags: ['galaxy']}

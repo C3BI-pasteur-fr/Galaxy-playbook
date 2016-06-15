@@ -1,0 +1,5 @@
+---
+- name:
+  become: yes
+  become_user: galaxypa
+  git: repo=https://github.com/C3BI-pasteur-fr/galaxy.git dest=~/
