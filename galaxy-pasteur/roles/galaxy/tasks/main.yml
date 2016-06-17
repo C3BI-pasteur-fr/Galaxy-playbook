@@ -1,5 +1,14 @@
 ---
-- name:
+- name: Clone galaxy pasteur
   become: yes
   become_user: galaxypa
-  git: repo=https://github.com/C3BI-pasteur-fr/galaxy.git dest=~/
+  git: repo=https://github.com/C3BI-pasteur-fr/galaxy.git dest=~/galaxy
+       version=pasteur
+
+- name: psycopg2 install
+  yum: name=python-psycopg2.x86_64 state=installed
+
+- name: Create db
+  become: yes
+  become_user: postgres
+  postgresql_db: name=galaxy-pasteur owner=galaxy-pasteur

@@ -7,5 +7,12 @@
   roles:
     - {role: create_user, tags: ['user']}
     - {role: git_install, tags: ['git']}
-    - {role: python, tags: ['python']}
+    - {role: rsync_install, tags: ['rsync']}
+    - {role: postgresql, tags: ['postgresql']}
+    - {role: samtools_install, tags: ['samtools']}
+    - {role: system_dependancies, tags: ['system']}
     - {role: galaxy, tags: ['galaxy']}
+    - {role: galaxy_conf, tags: ['galaxy']}
+    - {role: python, tags: ['python']}
+    - {role: python_dependancies, tags: ['python']}
+    - {role: configure, tags: ['galaxy_conf']}

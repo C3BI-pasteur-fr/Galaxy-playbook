@@ -3,23 +3,50 @@
   become: yes
   become_user: galaxypa
   file: path=~/src state=directory
-#- name: Python Download
-#  become: yes
-#  become_user: galaxypa
-#  get_url: url=https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz dest=~/src/
-- name: Python Download and Unarchive
-#  become: yes
-#  become_user: galaxypa
-  unarchive: src=https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz dest=/home/galaxypa/src/ creates=/home/galaxypa/src/Python-2.7.11 copy=no
+
+- name: Python Download
+  become: yes
+  become_user: galaxypa
+  get_url: url=https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz dest=~/src/
+
+- name: Python Unarchive
+  become: yes
+  become_user: galaxypa
+  unarchive: src=~/src/Python-2.7.11.tgz dest=~/src creates=~/src/Python-2.7.11 copy=no
+  #unarchive: src=https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz dest=~/src creates=~/src/Python-2.7.11 copy=no creates=Python-2.7.11
+  #command: tar -xzf Python-2.7.11.tgz chdir=~/src/ creates=Python-2.7.11
+
 - name: Python configure
   become: yes
   become_user: galaxypa
-  command: ./configure --prefix=~/galaxy-python chdir=~/src/Python-2.7.11 creates=Makefile
+  command: ./configure --prefix=/home/galaxypa/galaxy-python chdir=~/src/Python-2.7.11 creates=Makefile
+
 - name: Python make
   become: yes
   become_user: galaxypa
   command: make chdir=~/src/Python-2.7.11
+
 - name: Python Install
   become: yes
   become_user: galaxypa
   command: make install chdir=~/src/Python-2.7.11
+
+- name: Pip Download
+  become: yes
+  become_user: galaxypa
+  get_url: url=https://bootstrap.pypa.io/get-pip.py dest=~/src/
+
+- name: Pip install
+  become: yes
+  become_user: galaxypa
+  command: ~/galaxy-python/bin/python ~/src/get-pip.py
+
+- name: Virtualenv install
+  become: yes
+  become_user: galaxypa
+  command: ~/galaxy-python/bin/pip install virtualenv
+
+- name: Virtualenv create
+  become: yes
+  become_user: galaxypa
+  command: ~/galaxy-python/bin/virtualenv .venv chdir=~/galaxy creates=".venv"
