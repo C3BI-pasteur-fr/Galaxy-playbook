@@ -3,3 +3,8 @@
   become: yes
   become_user: galaxypa
   pip: name=bz2file virtualenv=~/galaxy/.venv
+
+- name: python ldap dependancy
+  become: yes
+  become_user: galaxypa
+  pip: name=python-ldap virtualenv=~/galaxy/.venv
