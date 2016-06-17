@@ -1,0 +1,3 @@
+---
+- name: initdb postgresql
+  service: name=postgresql state=started

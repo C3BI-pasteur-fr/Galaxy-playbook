@@ -1,0 +1,5 @@
+---
+- name: python bz2 dependancy
+  become: yes
+  become_user: galaxypa
+  pip: name=bz2file virtualenv=~/galaxy/.venv
