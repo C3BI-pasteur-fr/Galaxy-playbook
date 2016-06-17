@@ -2,6 +2,9 @@
 - name: Install postgresql
   yum: name=postgresql-server.x86_64 state=installed
 
+- name: initdb postgresql
+  command: service postgresql initdb creates=/var/lib/pgsql/data/pg_hba.conf
+
 - name: Add galaxy authentication in pg_hba.conf
   blockinfile:
     dest: /var/lib/pgsql/data/pg_hba.conf
