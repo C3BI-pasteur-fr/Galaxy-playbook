@@ -8,6 +8,11 @@
 - name: psycopg2 install
   yum: name=python-psycopg2.x86_64 state=installed
 
+- name: Create db user
+  become: yes
+  become_user: postgres
+  postgresql_user: name=galaxy-pasteur
+
 - name: Create db
   become: yes
   become_user: postgres
