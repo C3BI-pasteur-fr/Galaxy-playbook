@@ -1,2 +1,3 @@
 ---
-galaxy_conf: https://github.com/C3BI-pasteur-fr/galaxy_prod_conf.git
+galaxy_conf: https://projets.pasteur.fr/git/galaxy_base-conf.0
+

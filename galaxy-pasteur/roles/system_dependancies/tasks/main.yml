@@ -22,3 +22,18 @@
 
 - name: Install sqlite-devel
   yum: name=sqlite-devel.x86_64 state=latest
+
+- name: Install openldap
+  yum: name=openldap.x86_64 state=latest
+
+- name: Install openldap-devel
+  yum: name=openldap-devel.x86_64 state=latest
+
+- name: Install httpd
+  yum: name=httpd.x86_64 state=latest
+
+- name: Install httpd-devel
+  yum: name=httpd-devel.x86_64 state=latest
+
+- name: Install mod_xsenfile
+  yum: name=mod_xsendfile.x86_64 state=latest

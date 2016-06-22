@@ -10,9 +10,11 @@
     dest: /var/lib/pgsql/data/pg_hba.conf
     insertafter: "# TYPE  DATABASE    USER        CIDR-ADDRESS          METHOD"
     content: |
-      local   galaxy-pasteur         galaxy-pasteur                                md5
-      host    galaxy-pasteur         galaxy-pasteur          124.0.0.1/32          md5
-      host    galaxy-pasteur         galaxy-pasteur          ::1/128               md5
+      local   galaxy-pasteur         galaxy-pasteur                                trust
+      host    galaxy-pasteur         galaxy-pasteur          124.0.0.1/32          trust
+      host    galaxy-pasteur         galaxy-pasteur          ::1/128               trust
+  notify:
+    - restart postgresql
 
-- name: Ensure postgresql is running
-  service: name=postgresql state=started enabled=yes
+- name: Ensure postgresql is running and enabled
+  service: name=postgresql state=running enabled=yes

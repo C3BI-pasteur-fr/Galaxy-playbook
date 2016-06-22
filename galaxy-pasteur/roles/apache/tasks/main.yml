@@ -1,0 +1,8 @@
+- name: Configure Galaxy vhost
+  template: src=apache_galaxy.conf.j2 dest=/etc/httpd/conf.d/galaxy.conf mode=0640
+  notify:
+    - restart httpd
+
+- name: Ensure apache is running and enabled
+  service: name=httpd state=running enabled=yes
+

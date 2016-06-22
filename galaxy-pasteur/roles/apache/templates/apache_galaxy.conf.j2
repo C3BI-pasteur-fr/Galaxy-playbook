@@ -1,0 +1,16 @@
+<VirtualHost {{ ansible_hostname }}>
+    ServerName {{ ansible_hostname }}
+    RewriteEngine on
+    RewriteRule ^/static/style/(.*) /home/galaxypa/galaxy/static/june_2007_style/blue/$1 [L]
+    RewriteRule ^/static/scripts/(.*) /home/galaxypa/galaxy/static/scripts/packed/$1 [L]
+    RewriteRule ^/static/(.*) /home/galaxypa/galaxy/static/$1 [L]
+    RewriteRule ^/favicon.ico /home/galaxypa/galaxy/static/favicon.ico [L]
+    RewriteRule ^/robots.txt /home/galaxypa/galaxy/static/robots.txt [L]
+    RewriteRule ^(.*) http://localhost:18084$1 [P]
+    <Proxy http://localhost:18084>
+        Order deny,allow
+        allow from all
+        XSendFile On
+        XSendFilePath /
+    </Proxy>
+</VirtualHost>
