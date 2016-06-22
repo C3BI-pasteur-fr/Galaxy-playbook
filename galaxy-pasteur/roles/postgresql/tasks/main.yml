@@ -10,9 +10,9 @@
     dest: /var/lib/pgsql/data/pg_hba.conf
     insertafter: "# TYPE  DATABASE    USER        CIDR-ADDRESS          METHOD"
     content: |
-      local   galaxy-pasteur         galaxy-pasteur                                trust
-      host    galaxy-pasteur         galaxy-pasteur          124.0.0.1/32          trust
-      host    galaxy-pasteur         galaxy-pasteur          ::1/128               trust
+      local   {{ user_postgres }}         {{ user_postgres }}                                trust
+      host    {{ user_postgres }}         {{ user_postgres }}          124.0.0.1/32          trust
+      host    {{ user_postgres }}         {{ user_postgres }}          ::1/128               trust
   notify:
     - restart postgresql
 
