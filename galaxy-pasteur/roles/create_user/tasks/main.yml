@@ -1,3 +1,0 @@
----
-- name: Creation of "galaxypa" user
-  user: name=galaxypa comment="Application user" shell=/bin/bash state=present

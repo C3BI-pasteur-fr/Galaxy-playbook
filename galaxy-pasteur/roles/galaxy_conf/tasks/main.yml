@@ -3,3 +3,12 @@
   become: yes
   become_user: galaxypa
   git: repo={{ galaxy_conf }} dest=~/galaxy_conf
+
+- name: copy conf files
+  become: yes
+  become_user: galaxypa
+  #command: rsync -r ~/galaxy_conf/ ~/galaxy
+  synchronize:
+    src: /home/galaxypa/galaxy_conf/
+    dest: /home/galaxypa/galaxy
+  delegate_to: "{{ inventory_hostname }}"

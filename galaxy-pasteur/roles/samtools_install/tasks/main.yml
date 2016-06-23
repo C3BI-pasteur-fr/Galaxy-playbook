@@ -1,3 +1,0 @@
----
-- name: Install samtools
-  yum: name=samtools.x86_64 state=installed

@@ -1,0 +1,4 @@
+---
+galaxy_conf: https://github.com/C3BI-pasteur-fr/galaxy_base_conf.git
+user_postgres: galaxy
+

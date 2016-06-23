@@ -1,4 +1,7 @@
 ---
+- name: Creation of "galaxypa" user
+  user: name=galaxypa comment="Application user" shell=/bin/bash state=present
+
 - name: Clone galaxy pasteur
   become: yes
   become_user: galaxypa
@@ -11,9 +14,12 @@
 - name: Create db user
   become: yes
   become_user: postgres
-  postgresql_user: name=galaxy-pasteur
+  postgresql_user: name={{ user_postgres }}
 
 - name: Create db
   become: yes
   become_user: postgres
-  postgresql_db: name=galaxy-pasteur owner=galaxy-pasteur
+  postgresql_db: name={{ user_postgres }} owner={{ user_postgres }}
+
+- name: init scripts copy
+  template: src=galaxy dest=/etc/init.d/ mode=0744
