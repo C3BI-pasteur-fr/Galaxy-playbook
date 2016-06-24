@@ -1,0 +1,7 @@
+---
+- name: update package
+  # Run the equivalent of "yum update" as a separate step
+  yum: name=* state=latest
+
+- name: downgrade sqlite
+  command: yum downgrade sqlite -y

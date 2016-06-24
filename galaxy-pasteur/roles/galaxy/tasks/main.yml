@@ -2,6 +2,9 @@
 - name: Creation of "galaxypa" user
   user: name=galaxypa comment="Application user" shell=/bin/bash state=present
 
+- name: Set permission for apache
+  file: path=/home/galaxypa state=directory mode=0755
+
 - name: Clone galaxy pasteur
   become: yes
   become_user: galaxypa

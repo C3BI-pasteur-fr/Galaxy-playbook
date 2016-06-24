@@ -4,10 +4,11 @@
   remote_user: root
 
   roles:
-    - {role: postgresql, tags: ['postgresql']}
+    - {role: ifb, tags: ['ifb']}
     - {role: system_dependancies, tags: ['system']}
+    - {role: postgresql, tags: ['postgresql']}
+    - {role: apache, tags: ['apache']}
     - {role: galaxy, tags: ['galaxy']}
-    - {role: galaxy_conf, tags: ['galaxy']}
     - {role: python, tags: ['python']}
     - {role: python_dependancies, tags: ['python']}
-    - {role: apache, tags: ['apache']}
+    - {role: galaxy_conf, tags: ['galaxy']}

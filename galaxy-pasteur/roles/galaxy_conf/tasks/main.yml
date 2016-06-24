@@ -12,3 +12,19 @@
     src: /home/galaxypa/galaxy_conf/
     dest: /home/galaxypa/galaxy
   delegate_to: "{{ inventory_hostname }}"
+
+- name: fetch eggs
+  become: yes
+  become_user: galaxypa
+  shell: source .venv/bin/activate && python scripts/fetch_eggs.py chdir=~/galaxy
+  ignore_errors: yes
+
+- name: init_db
+  become: yes
+  become_user: galaxypa
+  shell: source .venv/bin/activate && sh manage_db.sh version_control && sh manage_db.sh upgrade chdir=~/galaxy
+  notify:
+    - restart galaxy
+
+- name: Ensure galaxy is running and enabled
+  service: name=galaxy state=running enabled=yes
