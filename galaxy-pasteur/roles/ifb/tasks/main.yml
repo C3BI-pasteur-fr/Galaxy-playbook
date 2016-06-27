@@ -5,3 +5,11 @@
 
 - name: downgrade sqlite
   command: yum downgrade sqlite -y
+
+- name: open port 80
+  shell: iptables -I INPUT -p tcp -m tcp --dport 80 -j ACCEPT && service iptables save
+  notify:
+    - restart iptables
+
+- name: Ensure iptables is running and enabled
+  service: name=iptables state=running enabled=yes
