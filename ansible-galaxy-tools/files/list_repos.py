@@ -9,6 +9,7 @@ from bioblend.toolshed import ToolShedInstance
 from bioblend.galaxy import GalaxyInstance
 import yaml
 import argparse
+import pprint
 
 
 def toolshed_to_dict(options):
@@ -19,8 +20,11 @@ def toolshed_to_dict(options):
     listrepos = []
 
     for repo in repositories:
-        listrepos.append({'name': repo['name'], 'owner': repo['owner'], 'tool_panel_section_id': '',
-                          'revisions': ts.repositories.get_ordered_installable_revisions(repo['name'], repo['owner'])})
+        revisions = ts.repositories.get_ordered_installable_revisions(repo['name'], repo['owner'])
+        if len(revisions) > 0:
+            revision = revisions[-1:]
+        listrepos.append({'name': repo['name'], 'owner': repo['owner'], 'tool_panel_section_id': '', 'tool_shed_url': options.url_toolshed,
+                          'revisions': revision, 'verify_ssl': False})
     listrepos = set_section_id(ts, listrepos, options.url_galaxy_ref)
     dict_repos = {'api_key': options.adminkey_galaxy_target, 'galaxy_instance': options.url_galaxy_target, 'tools': listrepos}
     write_yaml(dict_repos, options.output_yaml)
@@ -34,18 +38,23 @@ def set_section_id(ts, repos, url_galaxy_ref):
     gi = GalaxyInstance(url_galaxy_ref)
     gi.verify = False
     tools = gi.tools.get_tools()
+    clean_repos = []
     for repo in repos:
         for revision in repo['revisions']:
             if not repo['tool_panel_section_id']:
                 revision_info = ts.repositories.get_repository_revision_install_info(repo['name'], repo['owner'], revision)
-                for tool in revision_info[1]['valid_tools']:
-                    panel_id = return_panel(tool['guid'], tools)
-                    if panel_id:
-                        repo['tool_panel_section_id'] = panel_id
-    return repos
+                if 'valid_tools' in revision_info[1]:
+                    for tool in revision_info[1]['valid_tools']:
+                        panel_id = return_panel(tool['guid'], tools)
+                        if panel_id:
+                            repo['tool_panel_section_id'] = panel_id
+                            clean_repos.append(repo)
+                            break
+    return clean_repos
 
 
 def write_yaml(repositories, yamlfile):
+    pprint.pprint(repositories)
     with open(yamlfile, 'w') as outfile:
         outfile.write( yaml.safe_dump(repositories, encoding='utf-8', allow_unicode=True) )
 

@@ -3,456 +3,451 @@ galaxy_instance: http://fee.sis.pasteur.fr
 tools:
 - name: adapterremoval
   owner: odoppelt
-  revisions: [544cdd85ae6e, 7e7cc05a9f0d, 5976dcdf1e57]
+  revisions: [5976dcdf1e57]
   tool_panel_section_id: NGS_QC
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: alientrimmer
   owner: odoppelt
   revisions: [a49fa8984b59]
   tool_panel_section_id: NGS_QC
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: annotategenes
   owner: fmareuil
   revisions: [e4648522d935]
   tool_panel_section_id: nebula_tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: annotatepeaks
   owner: fmareuil
   revisions: [e9fe39e4156e]
   tool_panel_section_id: nebula_tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: annovar_annotate_variation
   owner: fmareuil
   revisions: [b9ef84f8f50d]
   tool_panel_section_id: ngs:_snp/indel_annotation
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: annovar_summarize
   owner: fmareuil
   revisions: [5ef2b442831e]
   tool_panel_section_id: ngs:_snp/indel_annotation
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: bam2fastq
   owner: screno
-  revisions: [d1300eba22eb, a916c59226dd]
+  revisions: [a916c59226dd]
   tool_panel_section_id: NGS_QC
-- name: bamstats
-  owner: fmareuil
-  revisions: [6b434a2433a0]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: bam_to_bigwig
   owner: fmareuil
   revisions: [955029d0ddeb]
   tool_panel_section_id: samtools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: bcftools
   owner: fmareuil
   revisions: [7b1e6c457dbc]
   tool_panel_section_id: bcftools
-- name: bcf_view_mpileup
-  owner: fmareuil
-  revisions: [3b072d3c7b4f]
-  tool_panel_section_id: ''
-- name: bedtools_intersectbed
-  owner: fmareuil
-  revisions: [ceaa330053ed]
-  tool_panel_section_id: ''
-- name: bedtools_pasteur
-  owner: fmareuil
-  revisions: [3178736ea748, 02951b8c385e]
-  tool_panel_section_id: ''
-- name: blast
-  owner: odoppelt
-  revisions: [2c7721d687da, 1dae6d5041fd, b1dd9f83b2f0, 1700afde02fa, 2be0644e476f,
-    d4a4eb1495f5]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: bowtie
   owner: odoppelt
   revisions: [525f27987663]
   tool_panel_section_id: solexa_tools
-- name: bowtie2
-  owner: fmareuil
-  revisions: [e2e9fb6d0772, 8d509172c729]
-  tool_panel_section_id: solexa_tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: breseq
   owner: mvalade
-  revisions: [d0bb008f972e, 2e943df92da3, 9c7e92134b9e]
+  revisions: [9c7e92134b9e]
   tool_panel_section_id: ngs:_snp/indel_annotation
-- name: bwa_map
-  owner: odoppelt
-  revisions: [1bc1c54a0a2f]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: chipmunk_chiphorde
   owner: fmareuil
   revisions: [ed133f0fd410]
   tool_panel_section_id: nebula_tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: circos
   owner: screno
   revisions: [350c0d353f0e]
   tool_panel_section_id: plots
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: clc_assembly_4
   owner: fmareuil
-  revisions: [011d7d9de384, 8b2947665b3e, a7eb4cb62aa8, 265da63912f9, 93d445b1e7a5,
-    f9ddb633ba4c, 0c38240ab963, 09f3a1db4535, bcaecf2507b9, 7d815f56c654, 1bcc27a85c4c,
-    4ccb1f9f67f5]
+  revisions: [4ccb1f9f67f5]
   tool_panel_section_id: ngs:_assembly
-- name: clc_assembly_cell_3
-  owner: odoppelt
-  revisions: [4fd07cde77b8, 6c32b93faf56, 31844e555d8b]
-  tool_panel_section_id: ''
-- name: clc_unmapped_reads
-  owner: fmareuil
-  revisions: [a7f7a2cfc353]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: convert2annovar
   owner: fmareuil
   revisions: [378027d444af]
   tool_panel_section_id: ngs:_snp/indel_annotation
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: cov2html
   owner: mmonot
-  revisions: [accc616d9261, d26a5f0292ed]
+  revisions: [d26a5f0292ed]
   tool_panel_section_id: ngs-rna-tools
-- name: createcontrolsubset
-  owner: fmareuil
-  revisions: [ac8ffac6c499]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: cuffcompare
   owner: fmareuil
   revisions: [f0168413b162]
   tool_panel_section_id: ngs-rna-tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: cuffdiff
   owner: fmareuil
   revisions: [5bda3d77350d]
   tool_panel_section_id: ngs-rna-tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: cufflinks
   owner: fmareuil
   revisions: [231d2467336a]
   tool_panel_section_id: ngs-rna-tools
-- name: cutadapt
-  owner: odoppelt
-  revisions: [e66d5cc9eb3b, ad754c16dd9f, 7cb3a97d7d5a, ae78c864f19e, 2d92f3cb7854,
-    4cecbfcceed6, 297c6fbec6d8, 07931c905d0c, 1bfed545b331, eb35c626f382]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: cutadapt_v2
   owner: mvalade
-  revisions: [d8402f467458, e9808b80e8fb]
+  revisions: [e9808b80e8fb]
   tool_panel_section_id: NGS_QC
-- name: deseq
-  owner: yluo
-  revisions: [fdcdeab46957]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: deseq
   owner: fmareuil
   revisions: [1b159c24d6de]
   tool_panel_section_id: ngs-rna-tools
-- name: dummy_tool_test
-  owner: screno
-  revisions: [d6a51d0f8021]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: export_data
   owner: fmareuil
-  revisions: [b2352212cdc2, 92755c152fdd]
+  revisions: [92755c152fdd]
   tool_panel_section_id: send
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: export_one_data
   owner: odoppelt
   revisions: [c4088d4a6f17]
   tool_panel_section_id: tests
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: export_sbw
   owner: odoppelt
-  revisions: [055e91ab935d, 625fb42e5e44]
+  revisions: [625fb42e5e44]
   tool_panel_section_id: tests
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: express
   owner: fmareuil
   revisions: [98149568e9e2]
   tool_panel_section_id: ngs-rna-tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: extractcentralregions
   owner: fmareuil
   revisions: [2e95f793b604]
   tool_panel_section_id: nebula_tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: fastafilter
   owner: fmareuil
   revisions: [f79141e99f1d]
   tool_panel_section_id: fasta_manipulation
-- name: fastafrombed
-  owner: fmareuil
-  revisions: [319a9ac9b507]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: fastqc
   owner: screno
-  revisions: [accf5a5b03a9, 2ad8ef432e25]
+  revisions: [2ad8ef432e25]
   tool_panel_section_id: NGS_QC
-- name: fastqtosanger
-  owner: odoppelt
-  revisions: [52be83d851b0]
-  tool_panel_section_id: ''
-- name: filtercontrolpeaks
-  owner: fmareuil
-  revisions: [003a3685de22]
-  tool_panel_section_id: ''
-- name: findpeaks
-  owner: fmareuil
-  revisions: [93512aec4632]
-  tool_panel_section_id: ''
-- name: formatdb
-  owner: fmareuil
-  revisions: [1ff7e2699059]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: fqcleaner
   owner: odoppelt
-  revisions: [be9e3b506ff7, f6b8de1be748]
+  revisions: [f6b8de1be748]
   tool_panel_section_id: NGS_QC
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: fqconvert2
   owner: fmareuil
   revisions: [e30605ce16aa]
   tool_panel_section_id: NGS_QC
-- name: fqconvert3
-  owner: fmareuil
-  revisions: []
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: fqtools
   owner: odoppelt
-  revisions: [0bea3e778b84, 00bb0831ad3a, 1ce6a7c48e71, 67a6ed30d00a, 61da69db554c]
+  revisions: [61da69db554c]
   tool_panel_section_id: NGS_QC
-- name: fqtrimmer
-  owner: odoppelt
-  revisions: [67464ddae72a]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: frogs
   owner: mvalade
-  revisions: [6e3a6480f545, 36109d143f38]
+  revisions: [36109d143f38]
   tool_panel_section_id: frogs_metagenomic_pipeline
-- name: frogs
-  owner: fmareuil
-  revisions: []
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: gatk2
   owner: fmareuil
-  revisions: [1b6770abfde6, 08f84c43e719, a9ac3947d892, c98feecf7eb7]
+  revisions: [c98feecf7eb7]
   tool_panel_section_id: ngs:_gatk_tools_version_2.4-9
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: gdtools
   owner: mvalade
-  revisions: [2f52eb705c7c, 4360534c9be4, fe6986ae4399]
+  revisions: [fe6986ae4399]
   tool_panel_section_id: ngs:_snp/indel_annotation
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: genbankconverters
   owner: odoppelt
-  revisions: [7cd7053a398c, 575a15fe88cd]
+  revisions: [575a15fe88cd]
   tool_panel_section_id: convert
-- name: genbank_to_gene
-  owner: fmareuil
-  revisions: [c22802cac1f3]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: genbank_to_gene_protein_convertor
   owner: screno
-  revisions: [59964b61b0bc, 894f744c6143, ad09f9b0c611]
+  revisions: [ad09f9b0c611]
   tool_panel_section_id: convert
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: gi2taxonomy
   owner: odoppelt
   revisions: [f8a640015ac6]
   tool_panel_section_id: tax_manipulation
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: gmap_gsnap
   owner: fmareuil
-  revisions: [6118e1805284, 4febaa1ac1c3]
+  revisions: [4febaa1ac1c3]
   tool_panel_section_id: ngs:_rnaseq_and_short-read_nucleotide
-- name: grep_count
-  owner: fmareuil
-  revisions: [b4b04378f7d0]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: htseqcount
   owner: fmareuil
-  revisions: [ddac5936c50a, 8013d3b64909]
+  revisions: [8013d3b64909]
   tool_panel_section_id: ngs-rna-tools
-- name: join_paired_end_files
-  owner: fmareuil
-  revisions: [b199f49890d9]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: kronatools
   owner: odoppelt
   revisions: [177f709eb055]
   tool_panel_section_id: tax_manipulation
-- name: kronatools_test
-  owner: odoppelt
-  revisions: []
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: macs14
   owner: fmareuil
   revisions: [6dd0119f4f12]
   tool_panel_section_id: peak_calling
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: macs2
   owner: fmareuil
   revisions: [043375f01cc3]
   tool_panel_section_id: peak_calling
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: makestatschipseq
   owner: fmareuil
   revisions: [c15fdd7bdfc7]
   tool_panel_section_id: nebula_tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: maketssdist
   owner: fmareuil
-  revisions: [db9f5eebab41, 3b3b117c9791]
+  revisions: [3b3b117c9791]
   tool_panel_section_id: nebula_tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: mblastall
   owner: fmareuil
-  revisions: [bc65a6f7b5fe, aad52052b9ae]
+  revisions: [aad52052b9ae]
   tool_panel_section_id: blast
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: mbwa_map
   owner: fmareuil
-  revisions: [19440db88b14, 7e5950e4e573]
+  revisions: [7e5950e4e573]
   tool_panel_section_id: solexa_tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: microbiome_analyses
   owner: afelten
-  revisions: [82627f0c0718, 247e41598a6f, 6c81dfd5ce65, 063c4722c985, 86db2c3c0dc4,
-    7adbd0487988, bace236ecb5e, bd38e47d2b96, cc9b3ac89ed0, 52f5d1e98eab, 880e118b999e]
+  revisions: [880e118b999e]
   tool_panel_section_id: microbiome_analysis
-- name: mpileup
-  owner: fmareuil
-  revisions: [8dcde4a5cd34]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: mpileup_convertor
   owner: fmareuil
   revisions: [e4e16b84b02a]
   tool_panel_section_id: convert
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: mpileup_v2
   owner: fmareuil
   revisions: [8951513c5de1]
   tool_panel_section_id: samtools
-- name: mpileup_vcf
-  owner: fmareuil
-  revisions: [fda8390cbf87]
-  tool_panel_section_id: ''
-- name: multifasta_sequence_extractor
-  owner: screno
-  revisions: [022fa3aa2fe3]
-  tool_panel_section_id: ''
-- name: ngs_qc
-  owner: odoppelt
-  revisions: [b074ab417d73, b51fb2017f93]
-  tool_panel_section_id: ''
-- name: ngs_roi
-  owner: odoppelt
-  revisions: [c8a48d839838, 2c2845ad894f, 31847b710283]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: ngs_roi2
   owner: screno
-  revisions: [002bc40e2e4a, 77e098aa177d, cf666346d5b9, 5949a550882e, 458ae30ca7ac,
-    3b9516c8df1c]
+  revisions: [3b9516c8df1c]
   tool_panel_section_id: ngs:_roi_tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: pasteur_fasta_facilities
   owner: screno
-  revisions: [c0718af9c3f6, ff22e6b5a291]
+  revisions: [ff22e6b5a291]
   tool_panel_section_id: fasta_manipulation
-- name: peak2bed
-  owner: fmareuil
-  revisions: [3ea3f460a247]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: pgp_tools
   owner: odoppelt
-  revisions: [a8ad08088a5d, ee3a73b52b17, d89879770d6b]
+  revisions: [d89879770d6b]
   tool_panel_section_id: NGS_QC
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: picard_pasteur_wrapper
   owner: fmareuil
-  revisions: [54f48bf29ac3, 8b6176e85df8]
+  revisions: [8b6176e85df8]
   tool_panel_section_id: ngs:_picard_tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: presartools
   owner: mvalade
   revisions: [02ff89e3416a]
   tool_panel_section_id: ngs-rna-tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: promoteur_tools
   owner: fmareuil
   revisions: [58e8aae1fa83]
   tool_panel_section_id: phylogeny_findpromoteur
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: samtobam
   owner: fmareuil
-  revisions: [22ee8a2b9cfd, 24bb951ed1ee]
+  revisions: [24bb951ed1ee]
   tool_panel_section_id: samtools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: samtools_filter
   owner: odoppelt
   revisions: [f7d08fbf7a15]
   tool_panel_section_id: samtools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: samtools_sort
   owner: fmareuil
-  revisions: [67371c0cef5e, f1c99aed354a]
+  revisions: [f1c99aed354a]
   tool_panel_section_id: samtools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: sartools_1_1_0
   owner: fmareuil
   revisions: [7f15db0a6db2]
   tool_panel_section_id: ngs-rna-tools
-- name: snpeff
-  owner: fmareuil
-  revisions: [1ffdf32e8145]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: snpeff2
   owner: fmareuil
-  revisions: [f93b53d9847e, 55669e8879ed, bea5ebe7c705, 4fdd1fcf4291, 4617848e0208]
+  revisions: [4617848e0208]
   tool_panel_section_id: ngs:_snp/indel_annotation
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: snpeff3
   owner: screno
   revisions: [948c1e47e925]
   tool_panel_section_id: ngs:_snp/indel_annotation
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: snpeff4
   owner: fmareuil
   revisions: [5fee1b58f97f]
   tool_panel_section_id: ngs:_snp/indel_annotation
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: snp_indel_convertor
   owner: fmareuil
   revisions: [f9f55fb839e4]
   tool_panel_section_id: convert
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: soap
   owner: odoppelt
-  revisions: [6d13792a83d9, 4881798cf5d1, 8cfc4cc9d54a]
+  revisions: [8cfc4cc9d54a]
   tool_panel_section_id: solexa_tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: ssaha_pileup
   owner: fmareuil
   revisions: [a70555c397e5]
   tool_panel_section_id: solexa_tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: stampy_mapper
   owner: fmareuil
-  revisions: [52e5a0734370, f857060c6d34]
+  revisions: [f857060c6d34]
   tool_panel_section_id: solexa_tools
-- name: svdetect
-  owner: odoppelt
-  revisions: [fff27fb8d53e]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: svdetect_pasteur
   owner: screno
-  revisions: [674b00337b58, cb59bd3b08f6, 87a1b09161a7, 552301c5a71e]
+  revisions: [552301c5a71e]
   tool_panel_section_id: ngs:_genomic_structural_variation
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: taxonomy_analysis
   owner: odoppelt
-  revisions: [d87acc347062, 4b438e866605, d27263b0b77e, 96dfb5d2b4d9, 376bd2cab4c9,
-    cb26aac6ecce, ef245198bde6, c430344f23be]
+  revisions: [c430344f23be]
   tool_panel_section_id: tax_manipulation
-- name: test
-  owner: bneron
-  revisions: [c0189dd3edcc, e6e2e5f70f4c]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: text_manipulation_utilities
   owner: screno
   revisions: [097e8a6b23e5]
   tool_panel_section_id: textutil
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: tophat
   owner: fmareuil
   revisions: [83807eb2794e]
   tool_panel_section_id: ngs-rna-tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: tophat2
   owner: fmareuil
-  revisions: [297eeb9b5b7c, 724b0a685485]
+  revisions: [724b0a685485]
   tool_panel_section_id: ngs-rna-tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: upload_tar
   owner: fmareuil
   revisions: [816a64bb7d40]
   tool_panel_section_id: getext
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: urgi_tools
   owner: fmareuil
-  revisions: [ed26936809a0, bcaa06cd54ab, 9cc0e8345ec3]
+  revisions: [9cc0e8345ec3]
   tool_panel_section_id: urgi
-- name: vcffilters
-  owner: odoppelt
-  revisions: [4ee08f554609]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: vcf_perl_scripts
   owner: screno
-  revisions: [9101b516ddd7, b81942b8a30d]
+  revisions: [b81942b8a30d]
   tool_panel_section_id: ngs_vcf_tools
-- name: vcf_remove_filtered
-  owner: fmareuil
-  revisions: [cb85eb36c149]
-  tool_panel_section_id: ''
-- name: vcf_substract
-  owner: fmareuil
-  revisions: [4899ed1f4e80]
-  tool_panel_section_id: ''
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
 - name: vcfutils
   owner: odoppelt
   revisions: [82cee648867f]
   tool_panel_section_id: ngs_vcf_tools
+  tool_shed_url: https://galaxy.web.pasteur.fr/toolshed-pasteur/
+  verify_ssl: false
