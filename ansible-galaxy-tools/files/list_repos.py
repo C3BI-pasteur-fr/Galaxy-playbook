@@ -24,7 +24,7 @@ def toolshed_to_dict(options):
         if len(revisions) > 0:
             revision = revisions[-1:]
         listrepos.append({'name': repo['name'], 'owner': repo['owner'], 'tool_panel_section_id': '', 'tool_shed_url': options.url_toolshed,
-                          'revisions': revision, 'verify_ssl': False})
+                          'tool_panel_section_label': '', 'revisions': revision, 'verify_ssl': False})
     listrepos = set_section_id(ts, listrepos, options.url_galaxy_ref)
     dict_repos = {'api_key': options.adminkey_galaxy_target, 'galaxy_instance': options.url_galaxy_target, 'tools': listrepos}
     write_yaml(dict_repos, options.output_yaml)
@@ -32,7 +32,7 @@ def toolshed_to_dict(options):
 def return_panel(guid, reftools):
     for reftool in reftools:
         if reftool['id'] == guid:
-            return reftool['panel_section_id']
+            return [reftool['panel_section_id'], reftool['panel_section_name']]
 
 def set_section_id(ts, repos, url_galaxy_ref):
     gi = GalaxyInstance(url_galaxy_ref)
@@ -45,9 +45,10 @@ def set_section_id(ts, repos, url_galaxy_ref):
                 revision_info = ts.repositories.get_repository_revision_install_info(repo['name'], repo['owner'], revision)
                 if 'valid_tools' in revision_info[1]:
                     for tool in revision_info[1]['valid_tools']:
-                        panel_id = return_panel(tool['guid'], tools)
-                        if panel_id:
-                            repo['tool_panel_section_id'] = panel_id
+                        panel_info = return_panel(tool['guid'], tools)
+                        if panel_info:
+                            repo['tool_panel_section_id'] = panel_info[0]
+                            repo['tool_panel_section_label'] = panel_info[1]
                             clean_repos.append(repo)
                             break
     return clean_repos
