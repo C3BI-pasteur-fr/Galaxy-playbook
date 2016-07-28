@@ -18,3 +18,4 @@
     - httpd.x86_64
     - httpd-devel.x86_64
     - mod_xsendfile.x86_64
+    - patch.x86_64

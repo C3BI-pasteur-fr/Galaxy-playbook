@@ -6,3 +6,5 @@
   with_items:
     - bz2file
     - python-ldap
+    - PyYAML
+    - bioblend

@@ -22,7 +22,7 @@
 - name: init_db galaxy
   become: yes
   become_user: galaxypa
-  shell: source .venv/bin/activate && sh manage_db.sh version_control && sh manage_db.sh upgrade chdir=~/galaxy
+  shell: source .venv/bin/activate & sh manage_db.sh version_control && sh manage_db.sh upgrade chdir=~/galaxy
   notify:
     - restart galaxy
 

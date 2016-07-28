@@ -1,0 +1,19 @@
+--- lib/tool_shed/util/hg_util.py	2016-07-19 13:47:37.149141414 +0200
++++ ../../galaxy/lib/tool_shed/util/hg_util.py	2016-07-07 16:44:07.072499834 +0200
+@@ -60,7 +60,7 @@
+                         dest=str( repository_file_dir ),
+                         pull=True,
+                         noupdate=False,
+-                        rev=listify( str( ctx_rev ) ) )
++                        rev=listify( str( ctx_rev ) ))
+         return True, None
+     except Exception as e:
+         error_message = 'Error cloning repository: %s' % str( e )
+@@ -149,6 +149,7 @@
+     # hgrc file' [ui] section:
+     # quiet = True
+     _ui.setconfig( 'ui', 'quiet', True )
++    _ui.setconfig('web', 'cacerts','', '--insecure')  #HACK SSL NON SIGNE
+     return _ui
+ 
+ 

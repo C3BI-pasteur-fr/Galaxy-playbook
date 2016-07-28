@@ -1,4 +1,6 @@
 ---
 galaxy_conf: https://github.com/C3BI-pasteur-fr/galaxy_base_conf.git
 user_postgres: galaxy
-
+url_galaxy_ref: https://galaxyapi.web.pasteur.fr
+url_galaxy_target: http://192.54.201.192/
+url_toolshed: https://galaxy.web.pasteur.fr/toolshed-pasteur/

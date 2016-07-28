@@ -1,0 +1,24 @@
+--- lib/tool_shed/util/common_util.py	2016-07-19 15:23:17.681999887 +0000
++++ lib/tool_shed/util/common_util.py	2016-07-19 15:27:45.256000561 +0000
+@@ -9,6 +9,21 @@
+ from galaxy.web import url_for
+ from tool_shed.util import encoding_util, xml_util
+ 
++import ssl
++
++#HACK SSL NON SIGNE
++try:
++    _create_unverified_https_context = ssl._create_unverified_context
++except AttributeError:
++    # Legacy Python that doesn't verify HTTPS certificates by default
++    pass
++
++else:
++    # Handle target environment that doesn't support HTTPS verification
++    ssl._create_default_https_context = _create_unverified_https_context
++
++
++
+ REPOSITORY_OWNER = 'devteam'
+ 
+ 
