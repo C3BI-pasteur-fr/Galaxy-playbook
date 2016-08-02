@@ -1,13 +1,4 @@
 ---
-- name: copy patch file
-  become: yes
-  become_user: galaxypa
-  copy: src=./files/patch_ssl dest=~/galaxy/patch_ssl
-
-- name: copy patch file
-  become: yes
-  become_user: galaxypa
-  copy: src=./files/patch_ssl_2 dest=~/galaxy/patch_ssl_2
 
 - name: copy the script to build the tool list
   become: yes
@@ -19,41 +10,23 @@
   become_user: galaxypa
   copy: src=install_tool_shed_tools.py dest=~/src/install_tool_shed_tools.py
 
-- name: apply ssl patch to common_util
-  become: yes
-  become_user: galaxypa
-  patch: >
-    src=~/galaxy/patch_ssl
-    dest=/home/galaxypa/galaxy/lib/tool_shed/util/common_util.py
-    remote_src=True
-
-- name: apply ssl patch to hg_util
-  become: yes
-  become_user: galaxypa
-  patch: >
-    src=~/galaxy/patch_ssl_2
-    dest=/home/galaxypa/galaxy/lib/tool_shed/util/hg_util.py
-    remote_src=True
-  notify:
-    - restart galaxy
-
-- name: Ensure galaxy is running and enabled
-  service: name=galaxy state=running enabled=yes
-
-- name: Create admin user
-  become: yes
-  become_user: galaxypa
-
 
 - name: create tool list using a galaxy and a toolshed as reference
   become: yes
   become_user: galaxypa
   shell: source .venv/bin/activate && python ~/src/list_repos.py --url_galaxy_ref {{ url_galaxy_ref }} --url_galaxy_target {{ url_galaxy_target }} --adminkey_galaxy_target {{ target_apikey }}  --url_toolshed {{ url_toolshed }} --output_yaml ~/src/tools.yaml chdir=~/galaxy
 
+- name: Ensure galaxy is running and enabled
+  service: name=galaxy state=running enabled=yes sleep=5
+
+
 - name: install the tools on the galaxy target
   become: yes
   become_user: galaxypa
   shell: source .venv/bin/activate && python ~/src/install_tool_shed_tools.py --galaxy {{ url_galaxy_target }} --apikey {{ target_apikey }} -t ~/src/tools.yaml --toolshed {{ url_toolshed }} chdir=~/galaxy
+  notify:
+    - restart galaxy
 
-
+- name: Ensure galaxy is running and enabled
+  service: name=galaxy state=running enabled=yes
 

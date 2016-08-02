@@ -26,5 +26,47 @@
   notify:
     - restart galaxy
 
+- name: copy master key patch file
+  become: yes
+  become_user: galaxypa
+  copy: src=./files/patch_master_key dest=~/galaxy/patch_master_key
+
+- name: copy ssl1 patch file
+  become: yes
+  become_user: galaxypa
+  copy: src=./files/patch_ssl dest=~/galaxy/patch_ssl
+
+- name: copy ssl2 patch file
+  become: yes
+  become_user: galaxypa
+  copy: src=./files/patch_ssl_2 dest=~/galaxy/patch_ssl_2
+
+- name: apply master key patch
+  become: yes
+  become_user: galaxypa
+  patch: >
+    src=~/galaxy/patch_master_key
+    dest=/home/galaxypa/galaxy/config/galaxy.ini
+    remote_src=True
+
+- name: apply ssl patch to common_util
+  become: yes
+  become_user: galaxypa
+  patch: >
+    src=~/galaxy/patch_ssl
+    dest=/home/galaxypa/galaxy/lib/tool_shed/util/common_util.py
+    remote_src=True
+
+- name: apply ssl2 patch to hg_util
+  become: yes
+  become_user: galaxypa
+  patch: >
+    src=~/galaxy/patch_ssl_2
+    dest=/home/galaxypa/galaxy/lib/tool_shed/util/hg_util.py
+    remote_src=True
+  notify:
+    - restart galaxy
+
+
 - name: Ensure galaxy is running and enabled
   service: name=galaxy state=running enabled=yes

@@ -1,0 +1,18 @@
+---
+- name: copy master key patch file
+  become: yes
+  become_user: galaxypa
+  copy: src=./files/revert_master_key dest=~/galaxy/revert_master_key
+
+- name: revert master key patch
+  become: yes
+  become_user: galaxypa
+  patch:  >
+    src=~/galaxy/revert_master_key
+    dest=~/galaxy/config/galaxy.ini
+    remote_src=True
+  notify:
+    - restart galaxy
+
+- name: Ensure galaxy is running and enabled
+  service: name=galaxy state=running enabled=yes

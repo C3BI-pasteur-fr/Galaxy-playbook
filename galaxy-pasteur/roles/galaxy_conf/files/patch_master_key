@@ -1,0 +1,11 @@
+--- galaxy.ini	2016-07-28 17:32:04.151092535 +0200
++++ galaxy.ini  2016-07-28 17:31:21.535093572 +0200
+@@ -878,7 +878,7 @@
+ # having a defined admin user in the database/config.  Only set this if you
+ # need to bootstrap Galaxy, you probably do not want to set this on public
+ # servers.
++master_api_key = 0a222ed868996c56bf840e5f0a227gaa
+-#master_api_key = changethis
+ 
+ # Enable tool tags (associating tools with tags).  This has its own option
+ # since its implementation has a few performance implications on startup for

@@ -1,3 +1,7 @@
 ---
-- name: galaxy handler
-  service: name=galaxy state=restarted
+- name: galaxy stop
+  service: name=galaxy state=stop
+
+- name: galaxy start
+  service: name=galaxy state=start
+

@@ -12,3 +12,5 @@
     - {role: python, tags: ['python']}
     - {role: python_dependancies, tags: ['python']}
     - {role: galaxy_conf, tags: ['galaxy']}
+    - {role: galaxy_tools, tags: ['galaxy_tools']}
+    - {role: cleanup, tags: ['galaxy']}
