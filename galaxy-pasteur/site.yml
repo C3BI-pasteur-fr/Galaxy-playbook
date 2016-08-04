@@ -9,6 +9,7 @@
     - {role: postgresql, tags: ['postgresql']}
     - {role: apache, tags: ['apache']}
     - {role: galaxy, tags: ['galaxy']}
+    - {role: galaxy, tags; ['galaxy']}
     - {role: python, tags: ['python']}
     - {role: python_dependancies, tags: ['python']}
     - {role: galaxy_conf, tags: ['galaxy']}

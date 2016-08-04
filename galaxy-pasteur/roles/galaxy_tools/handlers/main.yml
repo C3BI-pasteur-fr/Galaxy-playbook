@@ -1,7 +1,5 @@
 ---
-- name: galaxy stop
-  service: name=galaxy state=stop
+- name: restart galaxy
+  service: name=galaxy state=restart
 
-- name: galaxy start
-  service: name=galaxy state=start
 

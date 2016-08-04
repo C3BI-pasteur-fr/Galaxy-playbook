@@ -1,0 +1,86 @@
+#!/bin/bash
+#
+# galaxy      Start/Stop Galaxy.
+#
+# chkconfig: - 99 99
+# description: Galaxy is a web frontend to a lot of genomics tools.
+#
+# processname: galaxy
+#
+# By: Jean-Baptiste Denis - jbdenis@pasteur.fr
+# It is a base to be sourced (see galaxy-pf* scripts)
+#
+# Based on freshclam init by:
+# (c) 2004/05/17 Petr@Kristof.CZ under GNU GPL 2.0+
+
+# Source function library
+
+. /etc/init.d/functions
+
+RETVAL=0
+GUSER="galaxypa"
+GALAXY_HOME="/home/galaxypa"
+
+if [ -z "$GALAXY_HOME" ] ; then
+        echo "You must define GALAXY_HOME."
+        exit 1
+fi
+
+if [ -z "$GUSER" ] ; then
+        echo "You must define GUSER."
+        exit 1
+fi
+
+GALAXY_DIR="$GALAXY_HOME/galaxy"
+GALAXY_LOGS="$GALAXY_HOME/logs"
+PIDFILE="/var/run/galaxy/paster-pasteur-reporting-$GUSER.pid"
+OPTS="-E ./scripts/paster.py serve --log-file $GALAXY_LOGS/galaxy-pasteur-reporting.log config/reports_wsgi.ini --daemon --pid-file=$PIDFILE"
+PYTHON=python
+
+start() {
+    echo -n $"Starting galaxy reporting: "
+    # Start me up!
+    daemon --user $GUSER "source ~/.profile && cd $GALAXY_DIR && $PYTHON $OPTS"
+    echo
+}
+
+stop() {
+    echo -n $"Stopping galaxy reporting: "
+    killproc -p $PIDFILE
+    echo
+}
+
+restart() {
+      stop
+    start
+}
+
+reload() {
+    stop
+    start
+}
+
+case "$1" in
+  start)
+      start
+    ;;
+  stop)
+      stop
+    ;;
+  restart)
+      restart
+    ;;
+  condrestart)
+      [ -f $PIDFILE ] && restart || :
+    ;;
+  reload)
+    reload
+    ;;
+  *)
+    echo $"Usage: $0 {start|stop|restart|condrestart|reload}"
+    exit 1
+esac
+
+exit $?
+
+
