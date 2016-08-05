@@ -1,3 +1,0 @@
----
-- name: init scripts copy
-  template: src=galaxy dest=/etc/init.d/ mode=0744

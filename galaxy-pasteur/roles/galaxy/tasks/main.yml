@@ -26,3 +26,6 @@
 
 - name: init scripts copy
   template: src=galaxy dest=/etc/init.d/ mode=0744
+
+- name: init scripts copy
+  template: src=galaxy-reporting dest=/etc/init.d/ mode=0744

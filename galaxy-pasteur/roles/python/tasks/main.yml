@@ -12,9 +12,9 @@
 - name: Python Unarchive
   become: yes
   become_user: galaxypa
-  unarchive: src=~/src/Python-2.7.11.tgz dest=~/src creates=~/src/Python-2.7.11 copy=no
+  #unarchive: src=~/src/Python-2.7.11.tgz dest=~/src creates=~/src/Python-2.7.11 copy=no
   #unarchive: src=https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz dest=~/src creates=~/src/Python-2.7.11 copy=no creates=Python-2.7.11
-  #command: tar -xzf Python-2.7.11.tgz chdir=~/src/ creates=Python-2.7.11
+  command: tar -xzf Python-2.7.11.tgz chdir=~/src/ creates=Python-2.7.11
 
 - name: Python configure
   become: yes
